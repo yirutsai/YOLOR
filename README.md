@@ -22,7 +22,10 @@ cd ..
 
 ## Preprocessing
 ### Roboflow(Recommend)
-You need to upload your dataset to roboflow on your own.
+You need to upload your dataset to roboflow on your own. And output in YOLO v5 Pytorch format.
+Here is the setting of our dataset.
+![image](https://user-images.githubusercontent.com/35464631/172047986-a6f4fc4c-0abf-479f-b98f-b2f9b1d07b62.png)
+
 ```
 curl -L "https://app.roboflow.com/ds/oooooooo?key=xxxxxxxx" > roboflow.zip
 unzip roboflow.zip
