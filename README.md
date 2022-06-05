@@ -1,6 +1,7 @@
 # DLMI Task1
 
 ## Installation
+If this is not working, please refer to the README.md in yolor and yolov5 repectively.
 ```
 conda create -n <env_name> python=3.8
 conda activate <env_name>
@@ -21,6 +22,7 @@ cd ..
 
 ## Preprocessing
 ### Roboflow(Recommend)
+You need to upload your dataset to roboflow on your own.
 ```
 curl -L "https://app.roboflow.com/ds/oooooooo?key=xxxxxxxx" > roboflow.zip
 unzip roboflow.zip
