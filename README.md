@@ -46,6 +46,7 @@ You could modify custom.yaml to meet your need(specify directory of your trainin
 
 ## Pretrained model
 Please use this [link](https://drive.google.com/drive/folders/1CSISOLVNYlJsNrMZ3pFZbq1kjKOA1PMq?usp=sharing) to download the pretrained model.
+You could put this folder in `yolor`.
 
 
 ## Inferencing
