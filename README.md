@@ -41,7 +41,10 @@ cp * ../Public_Image
 cd ../
 ```
 
+
 ## Training
+Before training, please make sure you have downloaded the pretrained model weight offered by the author of YOLOR in this [link](https://github.com/WongKinYiu/yolor/tree/paper) and this [link](https://github.com/WongKinYiu/yolor/releases/tag/weights).
+After training, there should be a folder named as the name you passed in argument.
 ```
 python train.py --batch-size 4 --img 1280 1280 --data custom.yaml --weights yolor-e6.pt --device 0 --name yolo_e6_base --hyp hyp.scratch.1280.yaml --epochs 100 --workers 4
 ```
@@ -50,6 +53,7 @@ You could modify custom.yaml to meet your need(specify directory of your trainin
 ## Pretrained model
 Please use this [link](https://drive.google.com/drive/folders/1CSISOLVNYlJsNrMZ3pFZbq1kjKOA1PMq?usp=sharing) to download the pretrained model.
 You could put this folder in `yolor`.
+
 
 
 ## Inferencing
@@ -88,6 +92,21 @@ python postprocess.py --type <yolor> --target <name_of_model> --output <output_p
 Sample:
 ```
 python postprocess.py --type yolor --target inference_yolor_ensembleAll_dewp --output public_yolor_ensembleAll_dewp.json
+```
+## Reproduce
+In order to get the best result in private dataset, please refer to the following model weights.
+![image](https://user-images.githubusercontent.com/35464631/172910843-75db4adf-f87e-4689-8897-085e875cc742.png)
+```
+python detect.py --source ../Public_Image/\
+                --weights runs/train/yolor_d6/weights/best.pt runs/train/yolor_d6/weights/best_ap50.pt runs/train/yolor_d6/weights/best_overall.pt\
+                            runs/train/yolor_d6_base/weights/best.pt \
+                            runs/train/yolor_e6/weights/best.pt \
+                            runs/train/yolor_e6_base/weights/best.pt\
+                            runs/train/yolor_w6/weights/best.pt runs/train/yolor_w6/weights/best_ap50.pt runs/train/yolor_w6/weights/best_f.pt\
+                            runs/train/yolor_w6_base/weights/best.pt runs/train/yolor_w6_base/weights/best_ap.pt runs/train/yolor_w6_base/weights/best_ap50.pt \
+                            runs/train/yolor_p6/weights/best.pt runs/train/yolor_p6/weights/best_ap.pt runs/train/yolor_p6/weights/best_ap50.pt runs/train/yolor_p6/weights/best_f.pt\
+                            runs/train/yolor_p6_base/weights/best.pt runs/train/yolor_p6_base/weights/best_ap.pt runs/train/yolor_p6_base/weights/best_ap50.pt  runs/train/yolor_p6_base/weights/best_f.pt \
+--conf 0.05 --img-size 1664 --device 0 --augment --save-txt --save-conf --name inference_yolor_ensemble_v10_dewp_both_private
 ```
 
 
