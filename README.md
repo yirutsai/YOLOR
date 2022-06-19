@@ -51,7 +51,7 @@ python train.py --batch-size 4 --img 1280 1280 --data custom.yaml --weights yolo
 You could modify custom.yaml to meet your need(specify directory of your training and validation data).
 
 ## Pretrained model
-Please use this [link](https://drive.google.com/drive/folders/1CSISOLVNYlJsNrMZ3pFZbq1kjKOA1PMq?usp=sharing) to download the pretrained model.
+Please use this [link](https://drive.google.com/drive/folders/1tI5Vl_Y3gxeMbUGzDkRE32yV5ndf3Er_?usp=sharing) to download the pretrained model.
 You could put this folder in `yolor`.
 
 
